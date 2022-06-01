@@ -1,0 +1,723 @@
+/*esta parte lo que hace es globalizar por así decirlo el modelo de caja, para que 
+siga nuestro estándar de margin y padding y no se modifique */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*este es un hack para que se acoplen los rems que serán nuestras medidas
+    a 10 píxeles por rem */
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+ 
+  /* Selectores globales */
+  a {
+      text-decoration: none;
+      color: #000;
+      cursor: pointer;      
+  } /*le pone a todos los enlaces una decoracion nula y un color negro de fuente */
+  img {
+      max-width: 100%;
+      display: block;
+  } /*le pone un ancho de 100%a todas las imagenes para que no de hagan kk al momento de modificarlas */
+  /* el display block es para que los estilos puedan unirse en uno con la imagen y no se le haga cómo un margin entre imagen
+  y contenido */
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+ line-height: 1.5;
+  } /*line height es para dar un espaciado entre el texto que se muestra  */
+  h1, h2, h3, h4 {
+    font-family: 'Abel', sans-serif;
+    margin: 0 0 2rem 0;
+     } /*con esto importamos una fuente externa(usar google fonts para evitar problemas) */
+
+     /*Mediaquery mobile first*/
+@media(min-width: 768px){
+   h1 {
+       font-size: 5rem;
+   }
+}
+h2 {
+    font-size: 3.2rem;
+}
+@media(min-width: 768px){
+   h2 {
+       font-size: 4rem;
+   }
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+@media(min-width: 768px){
+  font-size {
+    font-size: 3rem;
+  }
+}
+
+/*utilidades  */
+.text-center {
+    text-align: center;
+} /*las utilidades sirven para asignarle una propiedad a un valor o varios valores específicos
+(se pueden reutilizar las utilidades, así funciona bootstrap y tailwind) */
+
+.btn {
+    background-color: #41a536;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    box-shadow: 0px 0px .5rem black;
+}/*transiciones en css */ 
+/* Las transiciones tienen 3 valores.
+1.¿Qué vamos a animar? (en mi caso voy a animar el background-color)
+2.¿Cuánto va a durar nuestra transicion? (.3s  / o sea punto tres segundos)
+3.El efecto que queremos que tenga la transicion ()
+*/
+
+
+
+
+/*las utilidades las podemos dejar vacias y agregarlas cuando queramos a nuestro código html al elemento que queramos 
+, aquí voy a agregar el boton que utilizamos para después colorcarlo en algún elemento que nos dalga después */
+.btn:hover {
+    background-color: #769c02 ;
+   
+} /*esta utilidad la dejo aquí por si la llegase a ocupar, pero bien la podría quitar */
+
+
+
+
+  /* Header y navegacion  */
+
+
+.nombre-sitio span {
+    color: rgb(56, 140, 196);
+}
+.nombre-sitio {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+
+}
+.nav-principal {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media(min-width: 768px){/*Esto quiere decir, apartir de 768 aplica esto*/
+   .nav-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   }
+   /*Intentar ponerle un hover o algo con JS*/
+}
+
+.contenedor-navegacion {
+    border-color: rgb(214, 208, 208);
+    border-top-style: solid;
+    border-width: 0.1rem;
+  
+} /*la línea superior de la navegación */
+
+.nombre-categorias-productos span{
+    color: rgb(56, 140, 196);
+}
+
+.navegacion a {
+  text-transform: uppercase;
+
+ 
+}
+
+
+
+.nav-footer a{
+    text-transform: uppercase;
+  
+}
+
+.hero {
+    background-image: url(../img/principal.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+   background-position: center center;
+   height: 25rem;
+   /*height: 55rem;*/
+} /*el background-position en este elemento de la imagen principal
+la usamos para que se vea al centro la imagen y no se nos estropee el diseño */
+
+@media(min-width: 768px){
+     .hero {
+         height: 55rem;
+     }/*Recordemos que lo estamos adaptando a desktop, no
+de mobile a desktop, sino de desktop a mobile., aquí
+cómo yo lo hice para desktop pss ni px, pero usualmente no
+es así*/
+}
+
+
+
+
+
+
+
+/*Categorias */
+.contenedor {
+    max-width: 120rem;
+    
+    margin: 0 auto;
+    
+} /*aquí pondremos cuánto queremos que mida nuestra section, si le ponemos pcoo, poco medira lo que metamos dentro, entre menos le pongamos menos medira
+  */
+  
+ 
+  @media(min-width: 768px){
+    .las-categorias {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+        
+    }
+  }
+  .categorias img {
+      width: 100%;
+      
+  }
+
+  /*
+ el display grid es para poder tener acceso a las propiedades que grid tiene para nostros
+ 
+  ya habilitada la propiedad tenemos que definir el número de columnas con las unidades de medida que queramos
+ y en el número de columnas que queramos poner los valores separados*/
+
+
+ .nombre-categorias-productos {
+     text-align: center;
+     margin-top: 3rem;
+ } /* aquí le puse un espaciado al titulo de categorias y lo alinee al centro ya que es una etiqueta inline, no una in block*/
+ .categorias {
+    padding: 2rem 0;
+} 
+ .categorias a{
+  display: block;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.808);
+  margin-bottom: 2rem;
+}/*1.se le pone display block porque los enlaces o los (a) son elementos en línea, o sea que no se pueden acomodar por
+un simple text-align center, se debe poner el display block para volverlo un elemento en bloque y así
+poder manipularlo con el text-align center */
+/*2.se le pone text-align center para centrar el contenido dentro del div padre */
+/*3. le puse el padding de 2 rem para que quedara un poco separado de la imagen */
+.categorias a:hover {
+ background-color: rgb(41, 96, 160);
+  /* height: 6rem;  */
+ border-bottom-right-radius: 1.25rem;
+ box-shadow: 5px 7px 5px rgb(209, 209, 209);
+} /*Los colores de fondo cuando te posicionas sobre algo se logran con un :hover que es un pseudo selector, en el caso
+de las etiquetas, hay muchos más, pero ese es el más común*/
+/*un enlace o boton necesitan mucho css, border-botto-right-radius
+es para agregar un borde redondeado en la parte inferior derecha de 20 píxeles */
+
+
+
+
+
+
+
+/*sobre nosotros */
+
+.sobre-nosotros {
+    background-image:  linear-gradient(to bottom, transparent 50% ,
+    rgb(214, 217, 238) 50%, rgb(14, 36, 77) 100% ) ,url(../img/nosotros.jpg);
+/*Aqui como nuestra seccion de nosotros se aplasta mucho lo que podemos hacer es cambiar
+la dirección del linear gradientde right a botton para que la imagen quede arriba y el 
+degradado abajo, pero el texto nos queda desacomodado.*/
+
+
+background-position: center, top left;/*Ahora lo que pasa aquí es que queremos
+que el color esté centrado, pero bottom left para la imagen(para que se vea mejor)
+y por eso le cambiamos el 70rem ya que este era mucho */
+    
+    padding: 3rem ;
+   /* margin-top: 10rem;  */
+     background-repeat: no-repeat;
+/*En Mac o pantallas más grandes lo que pasa es que se corta la imagen,
+por así decirlo no alcanza jajaj, eso es por el 120rem, para quitar eso
+le aumentamos de 120 a 160 por ejemplo*/   
+   background-size: 100%, 70rem;
+} /*lo que hace aqui el linear gradient es decir que vaya de derecha a izquierda empezando por el 0% hasta el 50% de color azul
+y después de eso que del 51% al 100 sea de color negro */
+/*el background-image aguanta también una imagen dentro de ella, recordemos que nos tenemos que ir al padre para hacer esto */ 
+/*el background-size es para que la imagen ocupe el 100% de ancho y 120 rem de alto */
+/*background-image:  linear-gradient(to right, transparent 50% ,rgb(214, 217, 238) 50%, rgb(14, 36, 77) 100% ) ,url(../img/nosotros.jpg);
+padding: 10rem 0rem 10rem 0rem;
+background-repeat: no-repeat;
+   background-size: 100%, 160rem;
+background-position: center left;
+   */
+@media(min-width: 768px){
+    .sobre-nosotros {
+        background-image:  linear-gradient(to right, transparent 50% ,rgb(214, 217, 238) 50%, rgb(14, 36, 77) 100% ) ,url(../img/nosotros.jpg);
+    padding: 10rem 0rem 10rem 0rem;
+    background-repeat: no-repeat;
+       background-size: 100%, 160rem;
+    background-position: center left;
+    }
+    
+}
+
+.sobre-nosotros-grid {
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+@media(min-width: 768px){
+    .sobre-nosotros-grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: unset;
+        column-gap: 4rem;
+    }
+ 
+}
+.hijo-sobre-nosotros {
+/*Ahora, podemos ver que tenemos el mismo fallo que antes, al crear dos columnnas
+lo que pasa es que el contenido se va hacia la primer columna, pero nosotros la queremos
+en la 2da, si estuvieramos utilizando flex lo que podríamos hacer sería que usaramos
+el flex basis, pero en este caso al utilizar grid vamos a poner el grid-column
+para decirle en qué línea tiene que empezar y en qué línea tiene que terminar*/
+   grid-row: 2 / 3;
+    
+    color: #fff;
+}
+/*Ahora, tenemos un error y es que se crea una grilla completa de dos columnas
+y dos filas, o sea 4 celdas, pero nuestro contenido del lado izquierdo se coloca
+en la última dejando mucho espacio.
+
+Esto pasa porque si podemos recordar, nuestros
+mediaquerys lo que hacen es sobre escribir las propiedades y ponerle unas nuevas
+pero si nosotros no le quitamos algunas propiedades que nos pueden resultar no
+beneficiosas como en este caso lo son (las filas) no vamos a tener el resultado
+que esperamos. 
+Para eso existe un valor que se llama "unset"
+*/
+
+@media(min-width: 768px){
+   .hijo-sobre-nosotros {
+       grid-column: 2 / 3;
+
+   }/*Al hacerlo al estilo movile first lo que pasa es que
+ponemos los media queris para pantallas más grandes, o sea que
+este media query significa, apartir de 768, aplica esto.
+ Por lo que arriba no necesitamos estas dos columnas, sino que necesitamos dos 
+ rows y posicionar una abajo de la otra, yeah
+
+*/
+}
+
+
+
+
+
+/*Listado de productos  */
+
+.contenido-principal {
+    padding-top: 5rem;
+    
+}
+
+.listado-productos {
+    display: grid; /*la regla es sencilla, si queremos posicionar los hijos, tenemos que irnos 
+    al padre, que en este caso vamos a posicionar todos los productos, por lo tanto tenemos que irnos al padre de todos los
+    productos, que es el div que creamos y pusimos como listado de productos */
+    grid-template-rows: repeat(6, 1fr);
+     /* column-gap: 2rem; */
+    row-gap: 2rem;
+    
+
+
+} /*aqui agregamos 6 columnas de una fracción cada una, recordemos que siempre se agrega una linea más  */
+/*también le agregamos un espaciado(gap) hacia todas las direcciones de los elementosde 2 rem */
+
+@media(min-width: 768px){
+  
+    .listado-productos {
+        column-gap: 2rem;
+        grid-template-rows: unset;
+        grid-template-columns: repeat(6,1fr);
+    }
+.producto:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    } /*aqui lo que hacemos ya es crear el layout, nth-child lo que hace es decirle que clase queremos tomar o posicionar para modificar
+    , grid-column-start lo que hace es decirle de qué linea queremos que empiece el elemento y el grid-column-end lo que hace es decirle 
+    donde queremos que termine esa misma columna( en mi caso yo quiero que inicie en la columna 1 y termine en la 7)*/
+    
+    /*aqui colocamos otro display grid para poder modificar más a fondo este elemento y le pusimos que queremos 3 columnas de una fracción cada una */
+    
+    /*Aquí nos quedo un error, lo que sucede es que si el usuario final hace su pantalla más pequeña la imagen se nos va hacia arriba y no mantiene la forma del elemento  */
+    
+    .producto:nth-child(1) img{
+        height: 40rem;
+        width: 100%;
+        object-fit: cover;
+    } 
+    /*Para solucionar este fallo tenemos una propiedad, que la tenemos que habilitar modificando su alto y su ancho, además de ponerle 
+    un object-fit  se le da un alto definido al elemento que queremos modificar y se le da un ancho del 100% ya que esto se aplica al contenedor*/
+    
+    
+    .producto:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+    }
+    .producto:nth-child(2) img {
+        height: 30rem;
+        width: 100%; /*el width se pone del 100% porque si no se desproporciona */
+        object-fit: cover;
+    }
+    .producto:nth-child(3) {
+        grid-column-start: 4;
+        grid-column-end: 7;
+    }
+    .producto:nth-child(3) img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+    } /* aqui lo que estamos haciendo es aggregar la propiedad object-fit a las imagenes 2 y 3
+    para que se ajusten bien al tamaño del contenedor */
+    .producto:nth-child(4) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    } 
+    .producto:nth-child(5) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    
+    }
+    .producto:nth-child(6) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+    
+    
+}
+
+.producto {
+    background-color: rgb(65, 65, 153)
+}
+
+.texto-producto {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 1.4;
+    margin: 2rem;
+}
+ 
+
+
+.texto-producto h3 {
+    padding: 0rem;
+    margin: 0rem;
+    font-size: 1.7;
+}
+.precio {
+   font-size: 2rem;
+ }/* aquí sólo cambié el tamaño de la fuente que tenía ese texto  */
+
+
+ /*Footer */
+  footer {
+      padding-top: 5rem;
+      margin-top: 5rem;
+      border-top: 1px solid rgb(224, 222, 222);
+  }
+ .alineacion {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+ }
+
+ @media(min-width: 768px){
+    .alineacion {
+        display: grid;
+        display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    }
+    .gabriel {
+        display: flex;
+        flex-direction: column;
+     
+   }
+ }
+ .gabriel {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+   padding: 0rem 9rem ;
+}
+.navegacion-principal-footer a{
+   display: flex;
+   align-content: flex-start;
+   padding-top: .8rem;
+}
+h4 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.derechos-reservados {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    color: darkgrey;
+}
+
+
+
+/*Página sobre nosotros */
+
+.father-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+/*esta propiedad lo que hace es en primera.
+El auto-fit acomoda los elementos automaticamente.
+El minmax toma como valores el tamaño mínimo y el tamaño máximo.
+si le pusimos 30rem, 1fr lo que le estamos diciendo es que menos de 30rem 
+se haga cada valor de una fracción, logrando un efecto de que cuando mida menos de 30rem
+le va a asignar 1fr a cada uno, lo que pasa es que se hace casi responsive.
+     
+
+*/
+    gap: 4rem;
+    
+}
+@media(min-width: 768px){
+  .father-1 .texto-x {
+      padding: 0;
+  }
+}
+.texto-x {
+    padding: 3rem;
+}
+/*Página de tienda  practicar todo lo que hay aquí*/
+
+
+
+
+
+
+/*Página de Blog*/
+
+.section-blog {
+    display: grid;
+    grid-template-columns: 2fr;
+    
+}/*con esto le decimos que la parte izquierda
+va a tomar 2 partes de una fracción y lo que queda se lo
+da a las listas */
+@media (min-width: 768px){
+   
+  .section-blog {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+  }
+
+}
+.entrada {
+    border-bottom: 2px solid rgb(204, 204, 204);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.entrada h3 {
+    text-align: center;
+}
+
+.entrada:last-of-type {
+    border: none;
+}/*esto quiere decir que busque la última clase 
+de entrada y le quite el borde */
+
+@media(min-width: 768px){
+  
+.meta-blog {
+    display: flex;
+    justify-content: space-between;
+}
+}
+
+/* aqui los elementos que seleccioné estaban en columna, uno sobre otro
+y poniendo la propiedad flex cambiaron a en línea, el justify content
+en este caso se encargó de distribuir los elementos en una línea*/
+
+.meta-blog span{
+    color: rgb(56, 140, 196);
+    
+}
+
+.enlace-blog {
+    background-color: chartreuse;
+    display: block;
+    max-width: max-content;
+    padding: 1.3rem;
+    border-radius: .5rem;
+    margin-bottom: 3rem ;
+    margin-left: 3rem;
+    box-shadow: 0px 0px .5rem black;
+
+}
+@media(min-width: 768px){
+    .enlace-blog {
+       margin-left: unset;
+    }
+}
+.enlace-blog:hover{
+background-color: darkturquoise;
+transition: .5s;
+}
+
+/*página entrada de blog */
+ 
+.contenedor-entrada-blog {
+    width: 60rem;
+    margin: 0 auto;
+}
+    /*esto es para centrar */
+ 
+
+.imagen {
+    background-image: url(../img/nosotros.jpg);
+    
+    background-size: cover;
+    
+    height: 38rem;
+    width: 60rem;
+}
+
+.texto-blog {
+    padding: 2.5rem 3.5rem;
+}
+ @media(min-width: 768px){
+  .texto-blog {
+    padding: 0rem;      
+  }
+} 
+
+
+
+
+
+
+/*Galería */
+
+.padre-listas li {
+    list-style: none;
+    box-shadow: 0px 0px 12px black;
+    border-radius: 10px;
+}
+.padre-listas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+}
+
+@media(min-width: 768px){
+   
+.padre-listas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+}
+
+.listas img {
+    width: 40rem;
+    height: 35rem;
+    object-fit: cover;
+    border-radius: 10px;
+}/* utilize esta propiedad debido a que las imagenes tenían 
+un ancho y un alto diferentes cada una y para que la galería se
+viera uniforme necesitaba de un ancho y un alto predeterminado
+y la propiedad object-fit: cover*/
+
+
+
+
+
+
+/*FORMULARIO */
+
+.formulario {
+    max-width: 60rem;
+    margin: 2rem auto;
+
+}
+.formulario fieldset {
+    border: 2px solid black;
+ margin-bottom: 2rem;   
+}
+.formulario legend { /*poner primero la clase y después poner la etiqueta que está dentro es un principio
+    de módulos */
+    text-align: center;
+    background-color: rgb(58, 58, 177);
+    width: 100%;
+    color: #fff;
+    padding: .8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+.campo {
+   display: flex;
+   margin-bottom: 1.5rem;
+}
+.campo label{
+flex-basis: 10rem;
+/*Lo que hace el flex basis es decir, okey, el label toma el ancho que requiera, pero yo
+quiero que tome 10 rem y así se alinea */
+
+}
+/*para darles estilos a los inputs les podemos poner una clase obviamente, pero 
+existe otra manera en la que podemos darles estilos y esta es por medio de atributos
+para ser más específico los atributos de tipos.
+Se hace de la siguiente manera */
+.campo input[type="text"], 
+input[type="tel"], 
+input[type="email"],
+input:not([type="radio"])/*poniendo este podemos quitar los demás*/
+textarea {
+    flex: 1;/*esto toma el resto del espacio que tenga disponible, si no hay nada, toma todo*/
+     border: 1px solid #e1e1e1;
+     padding: 1rem;
+}/*Aquí sólo puse la clase de campo para seguir con el principio de modulos  */
+
+/*Ahora, si se lo quiero aplicar a todos le hago así.
+les aplico las propiedades al input y ya jajaj.
+
+*/
+/*Pero si queremos aplicarselas a unas si y a otras no lo que tenemos que hacer es lo siguiente
+input:not ([type="radio"]), por ejemplo así.
+
+*/
+.btn {
+    border: none;
+    cursor: pointer;/*esto hace que cuando te coloques sobre el elemento se 
+    ponga una mano*/
+    width: 100%
+}/*solo le quite el borde por defecto que tiene el submit*/
+

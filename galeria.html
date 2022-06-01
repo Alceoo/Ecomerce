@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomerce</title>
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!--aquí importamos una fuente de google fonts, este link va antes que el de css-->
+    <link rel="stylesheet" href="CSS/estilos1.css">
+</head>
+
+<body>
+    <header>
+        <!--En el header va siempre un H1, de ley, ya que estos son los que aparceran en las busquedas de las personas, por lo que tiene que ser algo breve pero importante -->
+        <h1 class="nombre-sitio">Tienda <span>muebles</span></h1>
+    </header>
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal">
+            <!--Después del <header></header> siempre debe de ir un nav, para indicar que vamos a tener una navegación en nuestra página web -->
+            <a href="index.html">Inicio</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Tienda.html">Tienda</a>
+            <!--en la navegación siempre tendremos links hacia otras páginas de nuestro mismo sitio web obviamente, ya que tenemos que dirigirlos hacia otra página para darle el seguimiento al usuario-->
+            <a href="Blog.html">Blog</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+
+
+
+    <main class="contenido-principal contenedor">
+        <!--aqui reutilizamos nuevamente la clase contenedor, por lo que se le aplicaran los
+    valores que se le hayan asignado con css a esa misma clase-->
+        <h2 class="text-center">Sobre nosotros</h2>
+        <!-- Al todas las páginas tener un contenido principal, por defecto todas van a tener un main, y más en una tienda online,
+en este caso el html siempre se va a repetir en algún punto. -->
+        <ul class="padre-listas">
+            <li class="listas">
+                <a href="img/galeria_01.jpg"> <!--al poner una imagen dentro de un enlace y a su vez poner en el enlace el link hacia la imagen
+                lo que pasa es que al tocar la imagen aparte de que te manda a la imagen, se abre en modo pantalla completa-->
+                    <img src="img/galeria_01.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_02.jpg">
+                    <img src="img/galeria_02.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_03.jpg">
+                    <img src="img/galeria_03.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_04.jpg">
+                    <img src="img/galeria_04.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_05.jpg">
+                    <img src="img/galeria_05.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_06.jpg">
+                    <img src="img/galeria_06.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_07.jpg">
+                    <img src="img/galeria_07.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_08.jpg">
+                    <img src="img/galeria_08.jpg"></img>
+                </a>
+            </li>
+            <li class="listas">
+                <a href="img/galeria_09.jpg">
+                    <img src="img/galeria_09.jpg"></img>
+                </a>
+            </li>
+        </ul>
+         <!--aqui lo que estamos haciendo es una sección de galería, por lo que estamos anidando las imagenes dentri de un enlace para que
+        los usuarios puedan entrar sólo tocando la imagen y los redireccione a su s-->
+    </main>
+
+
+    <footer>
+        <div class="alineacion contenedor">
+            <div class="gabriel">
+                <h4>Categorías</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Cocina</a>
+                    <a href="#">Oficina</a>
+                    <a href="#">Jardín</a>
+                    <a href="#">Cochera</a>
+                    <a href="#">Dormitorio</a>
+                </nav>
+            </div>
+            <div class="gabriel">
+                <h4>Sobre Nosotros</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Nuestra Historia</a>
+                    <a href="#">Misión, Visión y Valores</a>
+                    <a href="#">Carreras</a>
+                    <a href="#">Políticas de Privacidad</a>
+                    <a href="#">Términos del Servcio</a>
+                </nav>
+            </div>
+            <div class="gabriel">
+                <h4>Soporte</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Preguntas Frecuentes</a>
+                    <a href="#">Ayuda en Línea</a>
+                    <a href="#">Confianza y Seguridad</a>
+
+                </nav>
+            </div>
+
+
+        </div>
+
+
+        <div class="derechos-reservados">
+            <p>Todos los derechos reservados, Tienda Muebles</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

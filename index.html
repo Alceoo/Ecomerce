@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomerce</title>
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!--aquí importamos una fuente de google fonts, este link va antes que el de css-->
+    <link rel="stylesheet" href="CSS/estilos1.css">
+</head>
+
+<body>
+    <header>
+        <!--En el header va siempre un H1, de ley, ya que estos son los que aparceran en las busquedas de las personas, por lo que tiene que ser algo breve pero importante -->
+        <h1 class="nombre-sitio">Tienda <span>muebles</span></h1>
+    </header>
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal">
+            <!--Después del <header></header> siempre debe de ir un nav, para indicar que vamos a tener una navegación en nuestra página web -->
+            <a href="index.html">Inicio</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Tienda.html">Tienda</a>
+            <!--en la navegación siempre tendremos links hacia otras páginas de nuestro mismo sitio web obviamente, ya que tenemos que dirigirlos hacia otra página para darle el seguimiento al usuario-->
+            <a href="Blog.html">Blog</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+
+    <div class="hero"> </div>
+    <!--imagen principal (en esta parte nosotros ponemos la imagen principal, este div lo usamos para poner la imagen principal del inicio y así poder manipularla desde el css )-->
+
+    <section class="contenedor">
+        <!--El section o sección es básicamente una etiqueta para especificar una sección en nuestra página, si vamos a tener varias seccio es cómo sobre nosotros, nuestros productos etc tenemos que usar section-->
+
+        <h2 class="nombre-categorias-productos">Categorías de <span>productos</span></h2>
+
+
+        <div class="las-categorias">
+            <div class="categorias">
+                <!--La etiqueta DIV la usaremos para encasillar o envolver varias etiquetas que queremos que estén separadas entre si, varias secciones, una imagen de otra, categorias etc.-->
+                <img src="img/categoria1.jpg" alt="imagen categoria">
+                <a href="#">Oficina</a>
+            </div>
+            <div class="categorias">
+                <img src="img/categoria2.jpg" alt="imagen categoria">
+                <a href="#">Hogar</a>
+            </div>
+            <div class="categorias">
+                <img src="img/categoria3.jpg" alt="imagen categoria">
+                <a href="#">Cocina</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-nosotros">
+
+        <div class="contenedor sobre-nosotros-grid">
+            <div class="hijo-sobre-nosotros">
+                <!--aqui se le agrego un div para poder modificar el elemento hijo que es el h2 y el parrafo
+                de lo contrario se separarían estos dos contenidos, cada uno en una columna, pero para eso ponemos el (hijo-sobre-nosotros)
+            para que el grid actúe en un sólo elemento -->
+                <h2>Sobre nosotros</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quae natus tempora nam assumenda, autem
+                    libero iste omnis architecto mollitia et delectus nemo ipsam ullam laudantium. Deserunt molestiae
+                    magnam
+                    nihil.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <main class="contenido-principal contenedor">
+        <!--aqui reutilizamos nuevamente la clase contenedor, por lo que se le aplicaran los
+    valores que se le hayan asignado con css a esa misma clase-->
+        <h2 class="text-center">Nuestros productos</h2>
+        <div class="listado-productos">
+
+            <div class="producto">
+                <!--le pondremos esta clase a lo que son los hijos del elemento principal-->
+                <img src="img/producto1.jpg" alt="Imagen producto1">
+                <div class="texto-producto">
+                    <h3>Producto 1</h3>
+                    <p>Lorem ipsum ea fuga recusandae sunt nostrum
+                        o ullam quia explicabo magni. margini ncoe vriv acrvjr
+                    </p>
+                    <p class="precio">1,000$</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </div>
+
+            </div>
+            <!--este es el primer producto-->
+
+
+
+            <div class="producto">
+                <!--le pondremos esta clase a lo que son los hijos del elemento principal-->
+                <img src="img/producto2.jpg" alt="Imagen producto2">
+                <div class="texto-producto">
+                    <h3>Producto 2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tempore ea officia minus
+                        recusandae sunt nostrum quidem fuga ex aliquid porro ullam quia explicabo magni. Perferendis
+                        pariatur incidunt fugit eveniet.</p>
+                    <p class="precio">2,000$</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </div>
+            </div>
+            <!--este es el 2do producto-->
+
+
+
+            <div class="producto">
+                <!--le pondremos esta clase a lo que son los hijos del elemento principal-->
+                <img src="img/producto3.jpg" alt="Imagen producto3">
+                <div class="texto-producto">
+                    <h3>Producto 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tempore ea officia minus
+                        recusandae sunt nostrum quidem fuga ex aliquid porro ullam quia explicabo magni. Perferendis
+                        pariatur incidunt fugit eveniet.</p>
+                    <p class="precio">3,000$</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </div>
+            </div>
+            <!--este es el 3er producto-->
+
+
+
+            <div class="producto">
+                <!--le pondremos esta clase a lo que son los hijos del elemento principal-->
+                <img src="img/producto4.jpg" alt="Imagen producto4">
+                <div class="texto-producto">
+                    <h3>Producto 4</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tempore ea officia minus
+                        recusandae sunt nostrum quidem fuga ex aliquid porro ullam quia explicabo magni. Perferendis
+                        pariatur incidunt fugit eveniet.</p>
+                    <p class="precio">4,000$</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </div>
+            </div>
+            <!--este es el 4to producto-->
+
+
+
+            <div class="producto">
+                <!--le pondremos esta clase a lo que son los hijos del elemento principal-->
+                <img src="img/producto5.jpg" alt="Imagen producto5">
+                <div class="texto-producto">
+                    <h3>Producto 5</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tempore ea officia minus
+                        recusandae sunt nostrum quidem fuga ex aliquid porro ullam quia explicabo magni. eveniet.</p>
+                    <p class="precio">5,000$</p>
+
+                    <a href="" class="btn">Agregar al carrito</a>
+                </div>
+            </div>
+            <!--este es el 5to producto-->
+
+
+
+            <div class="producto">
+                <!--le pondremos esta clase a lo que son los hijos del elemento principal-->
+                <img src="img/producto6.jpg" alt="Imagen producto6">
+                <div class="texto-producto">
+                    <h3>Producto 6</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tempore ea officia minus
+                        recusandae sunt nostrum quidem fuga ex aliquid porro ullam quia explicabo magni. Perferendis
+                        pariatur incidunt fugit eveniet.</p>
+                    <p class="precio">6,000$</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </div>
+            </div>
+            <!--este es el 6to producto-->
+
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <div class="alineacion contenedor">
+            <div class="gabriel">
+                <h4>Categorías</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Cocina</a>
+                    <a href="#">Oficina</a>
+                    <a href="#">Jardín</a>
+                    <a href="#">Cochera</a>
+                    <a href="#">Dormitorio</a>
+                </nav>
+            </div>
+            <div class="gabriel">
+                <h4>Sobre Nosotros</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Nuestra Historia</a>
+                    <a href="#">Misión, Visión y Valores</a>
+                    <a href="#">Carreras</a>
+                    <a href="#">Políticas de Privacidad</a>
+                    <a href="#">Términos del Servcio</a>
+                </nav>
+            </div>
+            <div class="gabriel">
+                <h4>Soporte</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Preguntas Frecuentes</a>
+                    <a href="#">Ayuda en Línea</a>
+                    <a href="#">Confianza y Seguridad</a>
+
+                </nav>
+            </div>
+
+
+        </div>
+
+
+       <div class="derechos-reservados">
+        <p>Todos los derechos reservados, Tienda Muebles</p>
+       </div>
+    </footer>
+
+</body>
+
+</html>

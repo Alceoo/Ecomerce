@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomerce</title>
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!--aquí importamos una fuente de google fonts, este link va antes que el de css-->
+    <link rel="stylesheet" href="CSS/estilos1.css">
+</head>
+
+<body>
+    <header>
+        <!--En el header va siempre un H1, de ley, ya que estos son los que aparceran en las busquedas de las personas, por lo que tiene que ser algo breve pero importante -->
+        <h1 class="nombre-sitio">Tienda <span>muebles</span></h1>
+    </header>
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal">
+            <!--Después del <header></header> siempre debe de ir un nav, para indicar que vamos a tener una navegación en nuestra página web -->
+            <a href="index.html">Inicio</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Tienda.html">Tienda</a>
+            <!--en la navegación siempre tendremos links hacia otras páginas de nuestro mismo sitio web obviamente, ya que tenemos que dirigirlos hacia otra página para darle el seguimiento al usuario-->
+            <a href="Blog.html">Blog</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+
+
+
+    <main class="contenido-principal contenedor">
+        <!--aqui reutilizamos nuevamente la clase contenedor, por lo que se le aplicaran los
+    valores que se le hayan asignado con css a esa misma clase-->
+        <h2 class="text-center">Sobre nosotros</h2>
+
+        <form class="formulario">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <!--La etiqueta legend se encaraga de poner información descriptiva acerca de los formularios, ya que por si solos
+    no hacen mucho-->
+
+                <div class="campo">
+                    <label for="Asunto">Asunto</label>
+                    <input id="Asunto" type="text" placeholder="Tu asunto" value="" required>
+                    <!--value es el valor que aparecerá por defecto. ejemplo:
+      si yo quiero que alguien ponga su correo electrónico o algo por el estilo, lo que debería de poner en el value 
+      sería el formato que debe de tener un correo electrónico, @, gmail.com etc
+      
+      -->
+                </div>
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <!--los labels son más específicos al querer dar una instrucción de lo que el usuario 
+  debe colocar en el input, esto agrega nuestro mensaje pero por fuera del input
+  Por cada input tiene que haber un label con las instrucción.
+  -->
+
+                    <!--Ahora, hay personas que se les dificulta mucho poder seleccionar el input, por eso existe el for, lo que hace 
+  el atributo for en el label es poder permitir que sólo tocando el texto que hay en el label, con eso se 
+  selecciona la casilla que queremos que llene.
+  Para conectar un label con un input se le pone un nombre al (for) y ese mismo nombre se le pone al input cómo atributo
+  con un atributo de id o class.-->
+
+                    <input id="nombre" type="text" placeholder="Nombre completo" required>
+                    <!--un input es una entrada de información por así decirlo, aquí le estamos diciendo, métenos información-->
+                    <!--el atributo placeholder es para ponerle cómo una instrucción de lo que debe de poner ahí, -->
+
+                </div>
+
+                <div class="campo">
+                    <label for="email">Tu email</label>
+                    <input id="email" type="email" placeholder="Correo electrónico" required>
+                </div>
+                <!-- existen distintos tipos de input, hay date, time, datetime-local, /*file para que el usuario pueda subir archivos */
+          /*password para meter una contraseña y no sea visible */ -->
+
+                <div class="campo">
+                    <label for="tel">Tú teléfono</label>
+                    <input id="tel" type="tel" placeholder="Numero de télefono" required>
+                    <!--El type tel le especifica al usuario que debe de poner un número de teléfono
+si lo ponemos en celular le aparecerá en automático el teclado numérico  -->
+                </div>
+                <!--no todos los inputs tienen soporte, algunos navegadores no aceptan algunos-->
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                           <textarea name="" id="mensaje" cols="30" rows="10" ></textarea>
+                </div>
+                <!--Si lo que queremos poner en nuestro formulario es un area donde el usuario pueda poner un comentario
+o algo parecido, tiene que ser una area más considerable de texto, para esto hay una etiqueta
+que se llama / textarea, esta etiqueta si tiene cierre, esta tiene 2 propiedades para cambiar de tamaño desde
+el html, que son: 
+rows="(numero de lineas horizontales que se le pueden poner como límite)"
+cols="(numero de columnas hacia la derecha que queremos que tenga)"
+también se puede modificar con css   -->
+
+            </fieldset>
+            <!-- Los selects son bastante interesantes, ya que te permiten poner varias opciones en ellos, en primera a un select es una opción 
+así mismo para seleccionar algo, te da opciones, y la etiqueta que se encarga de poner esas opciones es option
+es bastante intuitivo la verdad, obvio al select se le debe de poner un id que tenga el mismo nombre que el for que lleva el label  -->
+            <!--Hay varios atributos que tiene el select o mejor dicho los options.
+disabled: este se usa para dejar una opcion desabilitada pero que se siga viendo, normalmente esto es a el primer elemento que 
+tiene, ya que este elemento si dice selecciona tú país, no debe poder seleccionarse la opcion que dice selecciona tú país.
+Selected: si queremos poner una de nuestras opciones por defecto se usa esta etiqueta.
+estos dos atributos no necesitan agregarles nada ni un igual ni comillas, por si sólos funcionan
+-->
+            <fieldset>
+                <legend>País</legend>
+                <div class="campo">
+                    <label for="País"></label>
+                    <select name="" id="País" required>
+                        <option disabled value="">--Selecciona--</option>
+                        <option selected value="MX">MÉXICO</option>
+                        <option value="Cl">Colombia</option>
+                        <option value="AR">Argentina</option>
+                        <option value="EUA">Estados Unidos</option>
+                        <option value="EP">España</option>
+                    </select>
+                    <!--El value es para la computadora, es buena prática ponerlo.-->
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Información extra</legend>
+                <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input id="cliente" type="radio" name="tipo" value="cliente" required>
+                </div>
+                <!--se les pone el value si estamos haciendo un proyecto real y cómo buena práctica-->
+                <div class="campo">
+                    <label for="proveedor">Proveedor</label>
+                    <input id="proveedor" type="radio" name="tipo" value="proveedor" required>
+                </div>
+                <!--aqui le estamos diciendo al navegador que nos ponga dos inputs de tipo radio 
+con los valores cliente y proveedor, pero si lo dejamos así se puede elegir más de una opción, para unirlos y que sólo
+se pueda elegir una opción se le pone el atributo name a los dos y se les pone el mismo nombre obviamente, se hace lo mismo
+si queremos más -->
+                <!--La propiedad radio buttom te permite elegir sólo una opción y la propiedad checkbox te permite elegir varias 
+opciones-->
+
+
+                <div class="campo">
+                    <!--DATAlist-->
+                    <label for="categoria">Categorias de interes: </label>
+                    <input list="categorias" name="categoria" required>
+                    <!--Ojo, para data list el valor de list y el del id tienen que ser el mismo
+                    , de preferencia que todos sean el mismo.-->
+                    <datalist id="categorias">
+                        <!--aqui conectamos el datalist con el input y el label -->
+                        <option value="Cocina">
+                            <!--así es la forma de hacer un datalist, estas son las 
+                        opciones-->
+                        <option value="Oficina">
+                        <option value="Exterior">
+                        <option value="Televisión">
+                        <option value="Recamaras">
+                    </datalist>
+                </div>
+
+            </fieldset>
+
+            <!-- Ahora, la parte más importante, la que envía el formulario.
+             -->
+ <input class="btn" type="submit" value="Enviar formulario">
+
+
+        </form>
+        <!--si o si todos los formularios deben de iniciar con una etiqueta form
+      Función de los formularios:
+      los formularios se utilizan para muchísimas cosas, entre las cuales pueden estar las siguientes:
+  -->
+        <!--el type define que tipo de campo estamos utilizando, y el campo por defecto es text.-->
+
+        <!--Ahora, si queremos agrupar varios formularios no relacionados tenemos la etiqueta fieldset.
+  es cómo un div para formularios, agrupa partes de formularios relacionados para separarlos de los no relacionados-->
+
+        <!--Por defecto los imputs tienen un display inline, para corregir esto y que se conviertan en display block
+ya que pss casi nunca he visto un formulario inline, se rodean de un div, el cuál siempre viene con un dislpay block
+y así ya quedan los inputs en bloque, el div se pone después del legend-->
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+    <footer>
+        <div class="alineacion contenedor">
+            <div class="gabriel">
+                <h4>Categorías</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Cocina</a>
+                    <a href="#">Oficina</a>
+                    <a href="#">Jardín</a>
+                    <a href="#">Cochera</a>
+                    <a href="#">Dormitorio</a>
+                </nav>
+            </div>
+            <div class="gabriel">
+                <h4>Sobre Nosotros</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Nuestra Historia</a>
+                    <a href="#">Misión, Visión y Valores</a>
+                    <a href="#">Carreras</a>
+                    <a href="#">Políticas de Privacidad</a>
+                    <a href="#">Términos del Servcio</a>
+                </nav>
+            </div>
+            <div class="gabriel">
+                <h4>Soporte</h4>
+                <nav class="navegacion-principal-footer">
+                    <a href="#">Preguntas Frecuentes</a>
+                    <a href="#">Ayuda en Línea</a>
+                    <a href="#">Confianza y Seguridad</a>
+
+                </nav>
+            </div>
+
+
+        </div>
+
+
+        <div class="derechos-reservados">
+            <p>Todos los derechos reservados, Tienda Muebles</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
